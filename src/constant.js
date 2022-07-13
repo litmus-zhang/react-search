@@ -1,3 +1,24 @@
+export const Transactions = [
+  {
+    id: 1,
+    receiver: "John Doe",
+    description: "Payment for the month of January",
+    amount: 100,
+    date: "2020-01-01 00:00:00",
+    trxType: "credit",
+    status: "pending"
+  },
+  {
+    id: 2,
+    receiver: "John Doe",
+    description: "Payment for the month of February",
+    amount: 200,
+    date: "2020-02-01 00:00:00",
+    trxType: "credit",
+    status: "success"
+
+  },
+]
 export const Users = [
     {
       "id": 1,
@@ -6999,4 +7020,4 @@ export const Users = [
       "email": "ehimsworthrr@theglobeandmail.com",
       "gender": "Female",
     }
-  ]
+]
