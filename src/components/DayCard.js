@@ -1,15 +1,17 @@
 import React from 'react'
 import TransactionCard from './TransactionCard'
+import {ALL_TRANSCATIONS} from "../constant"
 
 
-export default function DayCard() {
+export default function DayCard({id, date, Transactions}) {
   return (
       <div className='dayCard'>
-        <p className='day'>11th July 2022</p>
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
+      <p className='day'>{date }</p>
+      {
+        Transactions.map(trx => <TransactionCard key={trx.id} {...trx} />)
+      }
+          
+        
           <style jsx="true">
               {`
               .dayCard{
@@ -26,3 +28,4 @@ export default function DayCard() {
     </div>
   )
 }
+ 

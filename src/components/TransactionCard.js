@@ -1,34 +1,47 @@
 import React, { useState } from 'react'
 
-export default function TransactionCard()
+// {
+//   id: 1,
+//   receiver: "John Doe",
+//   description: "Payment for the month of January",
+//   amount: 100,
+//   date: "2020-01-01 00:00:00",
+//   trxType: "credit",
+//   status: "pending"
+// },
+
+
+export default function TransactionCard({receiver, id, description, amount, date, trxType, status})
 {
-    const [debit, setDebit] = useState(false)
   return (
-      <div className={debit ? 'Trx debit' : "Trx credit"}>
+      <div className={trxType === "debit" ? 'Trx debit' : "Trx credit"}>
           <div className='left'>
-              <div className={debit ? 'type debit' : "type credit"}>
-                  {debit ? "DR" : "CR"}
+              <div className={trxType === "debit" ? 'type debit' : "type credit"}>
+                  {trxType === "debit" ? "DR" : "CR"}
               </div>
           <div className='info'>
               <strong className='receiver'>
-                  Lukmon Abdulsalam
+                  {receiver}
               </strong>
               <p className='details'>
-                  This is a sample transaction
+                  {description}
               </p>
           </div>
           </div>
           
           <div className='right'>
-              <strong className={debit ? 'debit-amount' : "credit-amount"}>
-                  $25.60
+              <strong className={trxType === "debit" ? 'debit-amount' : "credit-amount"}>
+                  ${amount}
               </strong>
-              <p>
-                  Pending
-              </p>
+        <span className={status === "failed" ? 'status failed' : status === "pending" ?'status pending' : 'status success'  }>
+          <div className={status === "failed" ? 'circle failed' : status === "pending" ?'circle pending' : 'circle success'  }>
+          </div>
+                  {status}
+              </span>
           </div>
           <style jsx="true">{`
           .Trx{
+            cursor: pointer;
             display: flex;
             width: 400px;
             justify-content:space-between;
@@ -89,10 +102,39 @@ export default function TransactionCard()
             flex-direction: column;
             align-items: flex-start;
           }
-          .right p{
+          .right .status{
             margin: 0;
+            display:flex;
+            justify-contents: space-between;
+            align-items:center;
+            column-gap:5px;
+            text-transform: capitalize;
+            font-size:14px;
+          }
+          .right .status.pending{
+            color: gray;
+          }
+          .right .status.failed{
             color: red;
           }
+          .right .status.success{
+            color: green;
+          }
+          .right .status .circle{
+            width: 10px;
+            height:10px;
+            border-radius:50%;
+          }
+          .right .status .circle.pending{
+            background: gray;
+          }
+          .right .status .circle.failed{
+            background: red;
+          }
+          .right .status .circle.success{
+            background: green;
+          }
+
 
           ` }</style>
     </div>

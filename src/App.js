@@ -7,6 +7,8 @@ import {Users} from "./constant"
 import { useState, useEffect } from 'react';
 import Table from './Table';
 import axios from 'axios';
+import {ALL_TRANSCATIONS} from "./constant"
+
 
 
 
@@ -17,32 +19,33 @@ function App()
 {
   const [query, setQuery] = useState("")
   const [data, setData] = useState([])
-  // console.log()
-  // const filteredUserByFirstName = Users.filter(user => user.first_name.toLowerCase().includes(query))
+  
+  // const filteredUserByName = ALL_TRANSCATIONS.filter(item =>
+  // {
+  //   const trx = item.Transactions
+  //   const response = trx.filter(t => t.receiver.toLowerCase().includes(query))
+  //   setData(response)
+  // })
   // const keys = ["first_name", "last_name", "email"]
   // const search = data =>
   // {
   //   return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query)))
   // }
-  useEffect(() =>
-  {
-    const fetchUser = async () =>
-    {
-      const res = await axios.get(`http://localhost:5000?q=${query}`)
-      setData(res.data)
-    }
-    if(query.length === 0 || query.length > 2) fetchUser()
+  // useEffect(() =>
+  // {
+  //   filteredUserByName()
+  
     
-  }, [query])
+  // }, [])
   return (
     <div className="App">
-      <input
+      {/* <input
         type="text"
         placeholder='Search.. '
         className='search'
         onChange={e=> setQuery(e.target.value)}
       />
-      <Table data={data}/>
+      <Table data={data}/> */}
       {/* <ul className='list'>
         {
           filteredUserByFirstName.map(user => (
@@ -52,20 +55,27 @@ function App()
         
 
       </ul> */}
-    {/*   <main className='container'>
+      <main className='container'>
       <h1>Welcome to helicarrier</h1>
-      <SearchBar />
+        {/* <SearchBar /> */}
+        <input
+        type="text"
+        placeholder='Search.. '
+        className='search'
+        onChange={e=> setQuery(e.target.value)}
+      />
       <div className='filter_container'>
         <FilterItem />
         <FilterItem />
         <FilterItem />
 
         </div>
-        <DayCard/>
-        <DayCard/>
-        <DayCard/> 
+        {
+          ALL_TRANSCATIONS.map(trx => <DayCard key={trx.id} date={ trx.date} Transactions={trx.Transactions} />)
+        }
+        
       </main>
-      */}
+     
       
       <style jsx="true">{`
         .container {

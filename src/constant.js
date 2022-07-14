@@ -1,23 +1,173 @@
-export const Transactions = [
+export const ALL_TRANSCATIONS = [
   {
-    id: 1,
-    receiver: "John Doe",
-    description: "Payment for the month of January",
-    amount: 100,
-    date: "2020-01-01 00:00:00",
-    trxType: "credit",
-    status: "pending"
+    id: "1",
+    date: "12th July 2022",
+    Transactions:   [
+    
+      {
+        id: 1,
+        receiver: "John Doe",
+        description: "Payment for the month of January",
+        amount: 100,
+        date: "2020-01-01 00:00:00",
+        trxType: "credit",
+        status: "pending"
+      },
+      {
+        id: 2,
+        receiver: "Emily Jones",
+        description: "Go get some snacks",
+        amount: 200,
+        date: "2020-02-01 00:00:00",
+        trxType: "credit",
+        status: "pending"
+    
+      },
+      {
+        id: 3,
+        receiver: "James Rochas",
+        description: "Party galore and flexing",
+        amount: 400,
+        date: "2020-02-01 00:00:00",
+        trxType: "credit",
+        status: "success"
+    
+      },
+      {
+        id: 4,
+        receiver: "Dan Walter",
+        description: "Para and Loud",
+        amount: 2200,
+        date: "2020-02-01 00:00:00",
+        trxType: "debit",
+        status: "failed"
+    
+      },
+    ]
   },
   {
-    id: 2,
-    receiver: "John Doe",
-    description: "Payment for the month of February",
-    amount: 200,
-    date: "2020-02-01 00:00:00",
-    trxType: "credit",
-    status: "success"
+    id: "2",
+    date: "13th July 2022",
+    Transactions:   [
+    
+      {
+        id: 1,
+        receiver: "John Doe",
+        description: "Payment for the month of January",
+        amount: 100,
+        date: "2020-01-01 00:00:00",
+        trxType: "credit",
+        status: "pending"
+      },
+      {
+        id: 2,
+        receiver: "Emily Jones",
+        description: "Go get some snacks",
+        amount: 200,
+        date: "2020-02-01 00:00:00",
+        trxType: "credit",
+        status: "pending"
+    
+      },
+      {
+        id: 3,
+        receiver: "James Rochas",
+        description: "Party galore and flexing",
+        amount: 400,
+        date: "2020-02-01 00:00:00",
+        trxType: "credit",
+        status: "success"
+    
+      },
+      {
+        id: 4,
+        receiver: "Dan Walter",
+        description: "Para and Loud",
+        amount: 2200,
+        date: "2020-02-01 00:00:00",
+        trxType: "debit",
+        status: "failed"
+    
+      },
+    ]
+  },
+  {
+    id: "3",
+    date: "14th July 2022",
+    Transactions:   [
+    
+      {
+        id: 1,
+        receiver: "John Doe",
+        description: "Payment for the month of January",
+        amount: 100,
+        trxType: "credit",
+        status: "pending"
+      },
+      {
+        id: 2,
+        receiver: "Emily Jones",
+        description: "Go get some snacks",
+        amount: 200,
+        trxType: "debit",
+        status: "pending"
+    
+      },
+      {
+        id: 3,
+        receiver: "James Rochas",
+        description: "Party galore and flexing",
+        amount: 400,
+        trxType: "debit",
+        status: "failed"
+    
+      },
 
+    ]
   },
+  {
+    id: "4",
+    date: "13th July 2022",
+    Transactions:   [
+    
+      {
+        id: 1,
+        receiver: "John Doe",
+        description: "Payment for the month of January",
+        amount: 100,
+        trxType: "credit",
+        status: "pending"
+      },
+      {
+        id: 2,
+        receiver: "Emily Jones",
+        description: "Go get some snacks",
+        amount: 200,
+        trxType: "credit",
+        status: "pending"
+    
+      },
+      {
+        id: 3,
+        receiver: "James Rochas",
+        description: "Party galore and flexing",
+        amount: 400,
+        trxType: "credit",
+        status: "success"
+    
+      },
+      {
+        id: 4,
+        receiver: "Dan Walter",
+        description: "Para and Loud",
+        amount: 2200,
+        trxType: "debit",
+        status: "failed"
+    
+      },
+    ]
+  },
+ 
 ]
 export const Users = [
     {
